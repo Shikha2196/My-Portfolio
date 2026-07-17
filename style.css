@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 * {
     margin:0;
     padding:0;
@@ -40,7 +41,7 @@ body {
     color: var(--sec-bg-color);
     font-weight: 700;
     cursor: pointer;
-    transform: 0.3s ease;
+    transition: transform 0.3s ease;
 }
 .name:hover {
     transform: scale(1.05);
@@ -62,25 +63,30 @@ span {
 #bar-icon {
     font-size: 2rem;
     color: var(--sec-bg-color);
-    visibility: hidden;
+    display: none;
+    cursor: pointer;
 }
 section {
-    min-width: 100vh;
-    padding: 13rem 11% 2rem;
+    min-height: 100vh;
+    padding: 10rem 11% 2rem;
 }
 .home {
     display: flex;
     justify-content: center;
     align-items: center;   
+    gap: 7rem;
 }
-.image img {
-    width: 20vw;
+.image img,
+.about-image img  {
+    width: 100%;
+    max-width: 300px;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--third-bg-color);
-    animation: floatImage 4s ease-in-out infinite;
+    animation: floatImage 5s ease-in-out infinite;
     transition: 0.4s ease;
 }
-.image img:hover{
+.image img:hover,
+.about-image img:hover {
     box-shadow: 0 0 10px var(--sec-bg-color),
                 0 0 15px var(--sec-bg-color),
                 0 0 20px var(--sec-bg-color);
@@ -95,9 +101,6 @@ section {
     100%{
         transform: translateY(0);
     }
-}
-.home-content {
-    margin-left: 7rem;
 }
 h2{
     font-size: 2.9rem;
@@ -119,8 +122,8 @@ p {
     border-radius: 50%;
     font-size: 1.6rem;
     color: var(--sec-bg-color);
-    margin-left: 1rem;
-    transition: 0.5 ease;
+    margin-left: 0 0.5rem;
+    transition: 0.5s ease;
 }
 .social-media a:hover{
     transform: scale(1.1) translateY(-3px);
@@ -132,9 +135,9 @@ p {
     display: inline-block;
     padding: 0.5rem 1.5rem;
     margin-top: 1.5rem;
-    margin-left: 1rem;
     font-size: 1.2rem;
     border-radius: 3rem;
+    font-weight: 600;
     background: var(--sec-bg-color);
     color: var(--text-color);
     transition: 0.3s ease;
@@ -149,52 +152,49 @@ p {
     align-items: center;
     gap:4rem;
 }
-.about-image img {
-    width:20vw;
-    border-radius: 50%;
-    box-shadow: 0 0 25px var(--third-bg-color);
-    transition: 0.4s ease;
-}
-.about-image img:hover {
-    box-shadow: 0 0 10px var(--sec-bg-color),
-                0 0 15px var(--sec-bg-color),
-                0 0 20px var(--sec-bg-color);
-}
 h3 {
     font-size: 1.7rem;
     margin-top: 1rem;
 }
-.skill h2 {
-    margin-bottom: 4rem;
-    text-align: center;
-    color: var(--sec-bg-color);
-}
-.skill-content {
-    display: flex;
+.skill-content,
+.project-content{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: stretch;
     justify-content: center;
-    align-items: center;
-    /* flex-wrap: wrap; */
     gap:4rem;
 }
-.skill-box{ 
-    flex: 1 1 30rem;
+.skill-box,
+.project-box{ 
+    flex: 1 1 300px;   
+    max-width: 350px;
     background: var(--four-bg-color);
     padding: 0.2rem 1rem; 
     border-radius: 1.8rem;
     text-align: center;
     box-shadow: 0 0 15px var(--third-bg-color);
-    transition: 0.3 ease;
+    transition: 0.3s ease;
 }
-.skill-box:hover {
+.skill-box:hover,
+.project-box:hover {
     box-shadow: 0 0 25px var(--third-bg-color); 
-    transform: scaleY(1.009);                     
+    transform: scaleY(1.009) translateY(-2px);                     
 }
-.skill-box i{
+.skill h2,
+.project h2,
+.contact h2 {
+    margin-bottom: 4rem;
+    text-align: center;
+    color: var(--sec-bg-color);
+}
+.skill-box i,
+.project-box i{
     font-size: 1.7rem;
     color: var(--sec-bg-color);
     margin-top: 1.2rem;
 }
-.skill-box h3{
+.skill-box h3,
+.heading h3{
     color: var(--sec-bg-color);
 }
 .skill-box p {
@@ -205,36 +205,6 @@ h3 {
     margin-top: 0;
     margin-bottom: 1.5rem;
     text-align: left;
-}
-.project-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:4rem;
-}
-.project h2{
-    text-align: center;
-    color: var(--sec-bg-color);
-}
-.project-box {
-    margin-top: 4rem;
-    flex: 1 1 30rem;
-    background: var(--four-bg-color);
-    padding: 0.2rem 1rem; 
-    border-radius: 1.8rem;
-    text-align: center;
-    box-shadow: 0 0 15px var(--third-bg-color);
-    transition: 0.3 ease;
-}
-.project-box:hover {
-    box-shadow: 0 0 25px var(--third-bg-color); 
-    transform: scaleY(1.009);                        
-}
-.heading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--sec-bg-color);
 }
 .heading a {
     color: var(--sec-bg-color);
@@ -257,13 +227,13 @@ h3 {
     border-radius: 50%;
     font-size: 1.6rem;
     color: var(--sec-bg-color);
-    margin-left: 1rem;
+    margin-left: 0.4rem;
     transition: 0.5 ease;
 }
 .project-box #link:hover{
     transform: scale(1.1) translateY(-1px);
     background: var(--sec-bg-color);
-    color: var(--text-bg-color);
+    color: var(--text-color);
     box-shadow: 0 0 4px var(--sec-bg-color);
 }
 .project-box .btn {
@@ -274,11 +244,7 @@ h3 {
 .contact {
     background: var(--first-bg-color);
 }
-.contact h2 {
-    margin-bottom: 3rem;
-    text-align: center;
-    color: var(--sec-bg-color);
-}
+
 .contact form {
     max-width: 80rem;
     margin: 1rem auto;
@@ -289,22 +255,21 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-wrap: wrap; */
 }
 .contact form .input-box input,
 .contact form textarea {
-    width: 63%;
+    width: 97%;
     padding:0.5rem;
     font-size: 1.3rem;
     color: var(--text-color);
     background: var(--four-bg-color);
     box-shadow: 0 0 5px var(--sec-bg-color);
     border-radius: 0.6rem;
-    margin:  0.7rem 8rem;
+   margin-top: 10px;
     resize: none;
 }
 .contact form .input-box input{
-    width:31%;
+    width:48%;
     margin: 0.5rem 0.35rem;
 }
 .contact form .btn{
@@ -321,6 +286,9 @@ h3 {
     text-align: center;
 }
 .footer-sec .social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     width: 42px;
     height: 42px;
     border: 2px solid var(--sec-bg-color);
@@ -343,3 +311,81 @@ h3 {
     color: var(--text1-color);
     margin-top: 2rem;
 } 
+@media (max-width: 1050px){
+    p{
+        font-size: 1.09rem;
+    }
+    h2{
+        font-size: 2.7rem;
+    } 
+}
+@media (max-width: 996px){
+    p{
+        font-size: 1rem;
+    }
+    h2{
+        font-size: 2.5rem;
+    } 
+    .name {
+        font-size: 2.2rem;
+    }
+    .navbar a{
+        margin-left: 2rem;
+    }
+}
+@media (max-width: 828px){
+    p{
+        font-size: 0.8rem;
+    }
+    h2{
+        font-size: 2.2rem;
+    } 
+    .name {
+        font-size: 1.9rem;
+    }
+    .navbar a{
+        margin-left: 1.8rem;
+    }
+}
+@media (max-width: 778px){
+    #bar-icon{
+        display: block;
+    }
+    .header {
+        padding: 1rem 5%;
+    }
+    .navbar{
+        display: none;
+    }
+    .navbar.active{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top:100%;
+        right: 0;
+        width: 100%;
+        background: var(--bg-color);
+        padding: 1rem 0;
+    }
+    .navbar a{
+        margin: 1rem;
+        text-align: center;
+    }
+    .home{
+        flex-direction: column;
+    }
+    p{
+        font-size: 1rem;
+    }
+    .about{
+        flex-direction: column-reverse;
+    }
+}
+
+
+    
+ 
+  
+   
+  
+ 
