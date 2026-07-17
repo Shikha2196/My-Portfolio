@@ -1,2 +1,2 @@
 # My-Portfolio
-This is my first Git Repository.
+This is my Personal Portfolio.
