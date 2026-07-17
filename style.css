@@ -378,6 +378,12 @@ h3 {
     .about{
         flex-direction: column-reverse;
     }
+     .contact form .input-box {
+        flex-direction: column;
+    }
+    .contact form .input-box input{
+        width: 97%;
+    }
 }
 
 
